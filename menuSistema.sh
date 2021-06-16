@@ -1,3 +1,5 @@
+#!/bin/bash
+
 opcion=0
 if [[ $EUID -ne 0 ]]; then
    dialog --title "Información" --msgbox "Este programa debe ser ejecutado con permisos de administrador" 0 0

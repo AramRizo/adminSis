@@ -30,11 +30,15 @@ dialog --separate-widget $'\n' --ok-label "Programar" \
 	    dialog --title "Información" --msgbox "programación de tarea cancelada" 0 0
         clear
   else
-    
-        clear
-        (crontab -u $user -l 2>/dev/null; echo "$m $h $d $mm $dd $comando" ) | crontab -u $user -
-        dialog --title "Información" --msgbox "Se programó la tarea con exito" 0 0
-        clear
+        if [ ${#comando} != 0 ]
+        then
+            clear
+            (crontab -u $user -l 2>/dev/null; echo "$m $h $d $mm $dd $comando" ) | crontab -u $user -
+            dialog --title "Información" --msgbox "Se programó la tarea con exito" 0 0
+            clear
+        else
+            dialog --title "Información" --msgbox "programación de tarea no realizada, no puede dejar el campo SCRIPT vacio" 0 0
+        fi
   fi
 
     
