@@ -1,4 +1,0 @@
-warning: commands will be executed using /bin/sh
-job 26 at Wed Jun 16 14:51:00 2021
-warning: commands will be executed using /bin/sh
-job 27 at Wed Jun 16 14:52:00 2021
